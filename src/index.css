@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-calendar-bg text-calendar-text;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .calendar-grid {
+    @apply grid grid-cols-7 gap-px bg-calendar-border rounded-lg overflow-hidden;
+  }
+  
+  .calendar-day {
+    @apply min-h-[120px] bg-white p-2 hover:bg-gray-50 transition-colors;
+  }
+  
+  .calendar-day.today {
+    @apply bg-primary-50 border-l-4 border-l-primary-500;
+  }
+  
+  .calendar-day.other-month {
+    @apply bg-gray-50 text-gray-400;
+  }
+  
+  .event-item {
+    @apply text-xs p-1 rounded mb-1 truncate cursor-pointer hover:bg-primary-100 transition-colors;
+  }
+  
+  .ai-suggestion {
+    @apply bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-3 mb-3;
+  }
+}
